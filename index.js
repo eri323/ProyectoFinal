@@ -1,17 +1,17 @@
 import express from "express";
-import "dotenv/config"
 import mongoose from "mongoose";
-
+import "dotenv/config"
+import Area from "./routes/Area.js"
 
 const index = express()
 index.use(express.json())
 
-index.use("/api/area",)
-index.use("/api/lote",)
+index.use("/api/area", Area)
+/* index.use("/api/lote",)
 index.use("/api/usuarios",)
 index.use("/api/inventario",)
 index.use("/api/pedido",)
-index.use("/api/ficha",)
+index.use("/api/ficha",) */
 
 index.listen(process.env.PORT, () => {
     console.log(
