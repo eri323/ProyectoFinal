@@ -7,7 +7,7 @@ const routers = Router()
 
 routers.get('detallepedidobusca', httpDetallePedido.getDetallePedidos);
 
-routers.get('DetallePedido/:id', [
+routers.get('detallepedidobuscaid/:id', [
 
   check("id", "Digite el id").not().isEmpty(),
   check("id", "Digite el id").isMongoId(),
@@ -19,7 +19,7 @@ routers.post('/detallepedidocrear',[
   check("Producto_id", "Digite el productoId").not().isEmpty().isMongoId(),
 ], httpDetallePedido.postDetallePedido);
 
-routers.put('/detallepedidobuscaid/:id',[
+routers.put('/detallepedidomodificar/:id',[
   check("id", "Digite el id").not().isEmpty().isMongoId(), 
   check("Cantidad", "Es necesaria una cantidad").not().isEmpty().isMongoId(),
   check("Pedido_id", "Es necesario el id del pedido").not().isEmpty().isMongoId(),  
