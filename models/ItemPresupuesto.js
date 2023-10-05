@@ -6,4 +6,4 @@ const ItemPresupuestoSchema = new mongoose.Schema({
     createAT: { type: Date, default: Date.now },
 })
 
-export default mongoose.model("", ItemPresupuestoSchema )
+export default mongoose.model("ItemPresupuesto", ItemPresupuestoSchema )

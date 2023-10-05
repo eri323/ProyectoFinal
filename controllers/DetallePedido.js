@@ -2,7 +2,7 @@ import DetallePedido from "../models/DetallePedido.js";
 
 const httpDetallePedido = {
 
-    getDetallePedidos: async (req, res) => {
+    getDetallePedido: async (req, res) => {
         try {
             const detallePedido = await DetallePedido.find()
             res.json({ detallePedido })
@@ -11,7 +11,7 @@ const httpDetallePedido = {
         }
     },
 
-    getDetallePedido: async (req, res) => {
+    getDetallePedidoId: async (req, res) => {
         const { id } = req.params
         try {
             const detallePedido = await DetallePedido.findById(id)
