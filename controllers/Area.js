@@ -4,19 +4,16 @@ const httpArea = {
     getArea: async (req, res) => {
         try {
             const areaList = await Area.find();
-            res.json({ areas: areaList });
-
+            res.json({  areaList });
         } catch (error) {
             res.status(400).json({ error });
         }
-
     },
     getAreaId: async (req, res) => {
         const { id } = req.params;
         try {
             const area = await Area.findById(id);
             res.json({ area });
-
         } catch (error) {
             res.status(400).json({ error });
         }
@@ -24,10 +21,9 @@ const httpArea = {
 
     postArea: async (req, res) => {
         try {
-            const { nombre } = req.body;
-            const area = new Area({ nombre });
-            await area.save();
-
+            const { Nombre } = req.body;
+            const area = new Area({ Nombre });
+            area.save();
             res.json({ area });
         } catch (error) {
             res.status(400).json({ error });
@@ -35,11 +31,11 @@ const httpArea = {
 
     },
 
-    putEditarArea: async (req, res) => {
+    putArea: async (req, res) => {
         try {
             const { id } = req.params;
-            const { ubicacion, capacidad } = req.body;
-            const area = await Area.findByIdAndUpdate(id, { ubicacion, capacidad }, { new: true });
+            const { Nombre } = req.body;
+            const area = await Area.findByIdAndUpdate(id, { Nombre }, { new: true });
             res.json({ area });
         } catch (error) {
             res.status(400).json({ error: "Error en el servidor" });
