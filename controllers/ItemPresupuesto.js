@@ -51,7 +51,7 @@ const httpItemPresupuesto = {
         }
     },
 
-    putDItemPresupuestoInactivar: async (req, res) => {
+    putItemPresupuestoInactivar: async (req, res) => {
         try {
             const { id } = req.params;
             const itempresupuesto = await ItemPresupuesto.findByIdAndUpdate(
