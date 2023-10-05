@@ -21,7 +21,7 @@ routers.post('/detallepedidocrear',[
 
 routers.put('/detallepedidobuscaid/:id',[
   check("id", "Digite el id").not().isEmpty().isMongoId(), 
-  check("Cantidad", "Es necesaria una cantidad").not().isEmpty().isMongoId(),
+  check("Cantidad", "Es necesaria una cantidad").not().isEmpty(),
   check("Pedido_id", "Es necesario el id del pedido").not().isEmpty().isMongoId(),  
   check("Producto_id", "Digite el producto id").not().isEmpty().isMongoId(), 
 ], httpDetallePedido.putEditarDetallePedido);

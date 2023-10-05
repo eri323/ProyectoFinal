@@ -11,7 +11,7 @@ routers.get('distruccionLFbuscaId/:id',[
 ]);
 
 routers.post('/distribucionLFcrear', [ 
-  check("Presupuesto", "Cual es el presupuesto").not().isEmpty().isMongoId(), 
+  check("Presupuesto", "Cual es el presupuesto").not().isEmpty(), 
   check("DistribucionPresupuesto_id", "Cual es el id presupuesto").not().isEmpty().isMongoId(), 
   check("Fichaid", "Cual es el id ficha").not().isEmpty().isMongoId(), 
 ],httpDistribucionLoteFicha .postDistribucionLoteFicha); 
