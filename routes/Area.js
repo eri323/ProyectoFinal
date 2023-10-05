@@ -26,7 +26,7 @@ routers.put('/inactivarArea/:id', [ // Cambio de /inactivarBus/:id a /inactivarA
     check("id", "Digite el id").not().isEmpty(),
     check("id", "Digite el id").isMongoId(),
 ], httpArea.putAreaInactivar); // Cambio de rtbuses.putBusInactivar a httpArea.putAreaInactivar
-
+//.
 routers.put('/activarArea/:id', [ // Cambio de /activarBus/:id a /activarArea/:id
     check("id", "Digite el id").not().isEmpty(),
     check("id", "Digite el id").isMongoId(),
