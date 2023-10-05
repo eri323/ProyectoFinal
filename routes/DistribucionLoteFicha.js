@@ -22,18 +22,15 @@ routers.put('distribucionLFmodificar/:id',[
   check("Presupuesto", "Digite el presupuesto").not().isEmpty(),
   check("DistribucionPresupuestoid", "Digite el id del presupuesto").not().isEmpty(),
   check("Fichaid", "Digite la ficha id").not().isEmpty(),
-]);
+], httpDistribucionLoteFicha.putDistribucionLoteFicha);
 
 
 routers.put('distribucionLFinac/:id',[
   check("id", "Digite el id").not().isEmpty(),
-  check("Presupuesto", "Digite el presupuesto").not().isEmpty(),
-  check("DistribucionPresupuestoid", "Digite el id del presupuesto").not().isEmpty(),
-  check("Fichaid", "Digite la ficha id").not().isEmpty(),
-]);
+], httpDistribucionLoteFicha. putDistribucionLoteFichaInactivar);
 
 
 
-
+//Incompleto
 
 export default routers;
