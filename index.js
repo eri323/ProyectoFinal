@@ -17,6 +17,6 @@ index.listen(process.env.PORT, () => {
     console.log(
         `Servidor escuchando en el puerto ${process.env.PORT}`
     );
-    mongoose.connect(process.env.mongoDB)
+    mongoose.connect(process.env.DB)
         .then(() => console.log(`Conexion Activa`));
 })
