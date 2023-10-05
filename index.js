@@ -2,13 +2,11 @@ import express from "express";
 import mongoose from "mongoose";
 import "dotenv/config"
 import Area from "./routes/Area.js"
-import DetallePedido from "./routes/DetallePedido.js";
 
 const index = express()
 index.use(express.json())
 
 index.use("/api/area", Area)
-index.use("/api/detallepedido", DetallePedido)
 /* index.use("/api/lote",)
 index.use("/api/usuarios",)
 index.use("/api/inventario",)
