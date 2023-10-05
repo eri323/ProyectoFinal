@@ -1,4 +1,6 @@
 import Usuarios from "../models/Usuarios.js";
+import { generarJWT } from "../middelwares/validar-jwt.js";
+import bcryptjs from "bcrypt"
 
 const httpUsuarios = {
     getUsuarios: async (req, res) => {
@@ -23,6 +25,10 @@ const httpUsuarios = {
         try {
             const { Nombre, Identificacion, Telefono, Correo, Contraseña, Rol } = req.body;
             const usuarios = new Usuarios({ Nombre, Identificacion, Telefono, Correo, Contraseña, Rol });
+
+            const salt = bcryptjs.genSaltSync();
+            usuarios.Contraseña = bcryptjs.hashSync(Contraseña, salt)
+
             usuarios.save();
             res.json({ usuarios });
         } catch (error) {
@@ -62,7 +68,46 @@ const httpUsuarios = {
         } catch (error) {
             res.status(400).json({ error });
         }
-    }
+    },
+
+
+    login: async (req, res) => {
+        const { Nombre, Contraseña } = req.body;
+
+        try {
+            const usuarios = await Usuarios.findOne({ Nombre })
+            if (!usuarios) {
+                return res.status(400).json({
+                    msg: "usuario / Contraseña no son correctos"
+                })
+            }
+
+            if (usuarios.Estado === 0) {
+                return res.status(400).json({
+                    msg: "usuario Inactivo"
+                })
+            }
+
+            const validContraseña = bcryptjs.compareSync(Contraseña, usuarios.Contraseña);
+            if (!validContraseña) {
+                return res.status(401).json({
+                    msg: "usuario / Contraseña no son correctos"
+                })
+            }
+
+            const token = await generarJWT(usuarios.id);
+
+            res.json({
+                usuarios,
+                token
+            })
+
+        } catch (error) {
+            return res.status(500).json({
+                msg: "Hable con el WebMaster"
+            })
+        }
+    },
 
 };
 
