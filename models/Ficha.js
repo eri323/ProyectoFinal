@@ -10,4 +10,4 @@ const FichaSchema = new mongoose.Schema({
     Area_Id: { type: mongoose.Schema.Types.ObjectId, ref: 'Area', required: true },
 
 })
-export default mongoose.model("Area", FichaSchema)
+export default mongoose.model("Ficha", FichaSchema)

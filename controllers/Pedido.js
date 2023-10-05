@@ -1,4 +1,4 @@
-import Pedidos from "../models/Pedidos.js";
+import Pedidos from "../models/Pedido.js";
 
 const httpPedidos = {
     getPedidos: async (req, res) => {
