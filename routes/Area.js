@@ -4,32 +4,32 @@ import httpArea from "../controllers/Area.js";
 
 const routers = Router();
 
-routers.get('/Area', httpArea.getArea); 
+routers.get('/areabusca', httpArea.getArea); 
 
-routers.get('/Area/:id', [ 
+routers.get('/areabuscaid/:id', [ 
     check("id", "Digite el id").not().isEmpty(),
     check("id", "Digite el id").isMongoId(),
 ], httpArea.getAreaId); 
 
-routers.post('/Area/agregar', [ 
+routers.post('/areacrear', [ 
     check("nombre", "Nombre del área").not().isEmpty(), 
 ], httpArea.postArea); 
 
-routers.put('/Area/:id', [ 
+routers.put('/areamodificar/:id', [ 
     check("id", "Digite el id").not().isEmpty(),
     check("id", "Digite el id").isMongoId(),
     check("ubicacion", "Ubicación requerida").not().isEmpty(), 
     check("capacidad", "Capacidad requerida").not().isEmpty(), 
-], httpArea.putEditarArea); 
+], httpArea.putArea); 
 
-routers.put('/inactivarArea/:id', [ // Cambio de /inactivarBus/:id a /inactivarArea/:id
+routers.put('/areainac/:id', [ 
     check("id", "Digite el id").not().isEmpty(),
     check("id", "Digite el id").isMongoId(),
-], httpArea.putAreaInactivar); // Cambio de rtbuses.putBusInactivar a httpArea.putAreaInactivar
+], httpArea.putAreaInactivar); 
 
-routers.put('/activarArea/:id', [ // Cambio de /activarBus/:id a /activarArea/:id
+routers.put('/areaact/:id', [ 
     check("id", "Digite el id").not().isEmpty(),
     check("id", "Digite el id").isMongoId(),
-], httpArea.putAreaActivar); // Cambio de rtbuses.putBusActivar a httpArea.putAreaActivar
+], httpArea.putAreaActivar);
 
 export default routers;
