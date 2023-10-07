@@ -37,11 +37,13 @@ routers.put('/productomodificar/:id', [
 
 routers.put('/productoinac/:id', [ 
     check("id", "Digite el id").not().isEmpty().isMongoId(),
+    check("id", "Digite el id").isMongoId(),
     validarCampos
 ], httpProducto.putProductosInactivar);
 
 routers.put('/productoact/:id', [
-    check("id", "Digite el id").not().isEmpty().isMongoId(),
+    check("id", "Digite el id").not().isEmpty(),
+    check("id", "Digite el id").isMongoId(),
     validarCampos
 ], httpProducto.putProductosActivar);
 

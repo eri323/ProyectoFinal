@@ -21,7 +21,7 @@ routers.post('/login', [validarCampos],httpUsuario.login)
 routers.post('/usuariocrear', [ 
     check("Nombre", "Ingrese nombre Usuario").not().isEmpty(),
     check("Identificacion", "Ingrese su identificacion").not().isEmpty(),  
-    check("telefono", "Ingrese su numero de telefono").not().isEmpty(), 
+    check("Telefono", "Ingrese su numero de telefono").not().isEmpty(), 
     check("Correo", "Ingrese su correo").not().isEmpty(),
     check("Contraseña", "Ingrese su contraseña ").not().isEmpty(),  
     check("Rol", "ingrese su rol").not().isEmpty(), 
@@ -32,7 +32,7 @@ routers.put('/usuariomodificar/:id', [
     check("id", "Digite el id").not().isEmpty(),
     check("Nombre", "Ingrese nombre Usuario").not().isEmpty(),
     check("Identificacion", "Ingrese su identificacion").not().isEmpty(),  
-    check("telefono", "Ingrese su numero de telefono").not().isEmpty(), 
+    check("Telefono", "Ingrese su numero de telefono").not().isEmpty(), 
     check("Correo", "Ingrese su correo").not().isEmpty(),
     check("Contraseña", "Ingrese su contraseña ").not().isEmpty(),  
     check("Rol", "ingrese su rol").not().isEmpty(), 

@@ -5,9 +5,9 @@ import validarCampos from "../middelwares/validarcampos.js"
 
 const routers = Router()
 
-routers.get('detallepedidobusca', [validarCampos],httpDetallePedido.getDetallePedido);
+routers.get('/detallepedidobusca', [validarCampos],httpDetallePedido.getDetallePedido);
 
-routers.get('detallepedidobuscaid/:id', [
+routers.get('/detallepedidobuscaid/:id', [
   check("id", "Digite el id").not().isEmpty(),
   check("id", "Digite el id").isMongoId(),
   validarCampos

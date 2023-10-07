@@ -23,7 +23,8 @@ routers.post('/pedidocrear', [
   ], httpPedido.postPedidos); 
 
 routers.put('/pedidosmodificar/:id', [ 
-    check("id", "Digite el id").not().isEmpty().isMongoId(),
+    check("id", "Digite el id").not().isEmpty(),
+    check("id", "Digite el id").isMongoId(),
     check("FechaCreacion", "Se necesita la fecha de creacion").not().isEmpty(), 
     check("FechaEntrega", "Se necesita la fecha de entrega").not().isEmpty(), 
     check("IdDistribucionLoteFicha", "Se necesita la IdDistribucionLoteFicha").not().isEmpty().isMongoId(), 

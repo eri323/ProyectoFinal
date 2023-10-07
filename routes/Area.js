@@ -22,8 +22,6 @@ routers.post('/areacrear', [
 routers.put('/areamodificar/:id', [ 
     check("id", "Digite el id").not().isEmpty(),
     check("id", "Digite el id").isMongoId(),
-    check("ubicacion", "Ubicación requerida").not().isEmpty(), 
-    check("capacidad", "Capacidad requerida").not().isEmpty(), 
     validarCampos
 ], httpArea.putArea); 
 
@@ -33,7 +31,7 @@ routers.put('/areainac/:id', [
     validarCampos
 ], httpArea.putAreaInactivar);
 
-routers.put('/activarArea/:id', [
+routers.put('/areaact/:id', [
     check("id", "Digite el id").not().isEmpty(),
     check("id", "Digite el id").isMongoId(),
     validarCampos

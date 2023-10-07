@@ -4,15 +4,15 @@ import httpDistribucionLoteFicha from "../controllers/DistribucionLoteFicha.js";
 import validarCampos from "../middelwares/validarcampos.js"
 
 const routers = Router();
-routers.get('dislotefichabusca', [
+routers.get('/dislotefichabusca', [
   validarCampos
 ], httpDistribucionLoteFicha.getDistribucionLoteFicha)
 
-routers.get('dislotefichabuscaid/:id',[
+routers.get('/dislotefichabuscaid/:id',[
   check("id", "Digite el id").not().isEmpty(),
   check("id", "Digite el id").isMongoId(),
   validarCampos
-]);
+], httpDistribucionLoteFicha.getDistribucionLoteFichaId);
 
 routers.post('/dislotefichacrear', [ 
   check("Presupuesto", "Cual es el presupuesto").not().isEmpty(), 

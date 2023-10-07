@@ -46,7 +46,7 @@ const httpArea = {
     putAreaInactivar: async (req, res) => {
         try {
             const { id } = req.params;
-            const area = await Area.findByIdAndUpdate(id, { estado: 0 }, { new: true });
+            const area = await Area.findByIdAndUpdate(id, { Estado: 0 }, { new: true });
             res.json({ area });
         } catch (error) {
             res.status(400).json({ error });
@@ -57,7 +57,7 @@ const httpArea = {
     putAreaActivar: async (req, res) => {
         try {
             const { id } = req.params;
-            const area = await Area.findByIdAndUpdate(id, { estado: 1 }, { new: true });
+            const area = await Area.findByIdAndUpdate(id, { Estado: 1 }, { new: true });
             res.json({ area });
         } catch (error) {
             res.status(400).json({ error });
