@@ -6,10 +6,10 @@ const ProductoSchema = new mongoose.Schema({
     Descripcion: { type: String, required: true },
     UnidadMedida: { type: String, required: true},
     PrecioUnitario: { type: Number, required: true},
-    Iva: {type: Number, required: true},
-    Consumible: { type: Boolean, required: true},
+    Iva: {type: String, required: true},
+    Tipo: { type: String, required: true},
     createAT: { type: Date, default: Date.now },
-    Estado: { type: Number, default: 1 },
+    Estado: { type: Boolean, default: 1 },
 })
 
 export default mongoose.model("Producto", ProductoSchema)

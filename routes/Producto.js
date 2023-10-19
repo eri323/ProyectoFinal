@@ -20,7 +20,7 @@ routers.post('/productocrear', [
     check("UnidadMedida", "Ingrese la unidad de medida").not().isEmpty(), 
     check("PrecioUnitario", "Ingrese el precio unitario").not().isEmpty(),
     check("Iva", "Ingrese el iva del producto ").not().isEmpty(),  
-    check("Consumible", "Ingrese el consumible").not().isEmpty(), 
+    check("Tipo", "Ingrese el Tipo").not().isEmpty(), 
     validarCampos
 ], httpProducto.postProductos); 
 
@@ -31,7 +31,7 @@ routers.put('/productomodificar/:id', [
     check("UnidadMedida", "Ingrese la unidad de medida").not().isEmpty(), 
     check("PrecioUnitario", "Ingrese el precio unitario").not().isEmpty(),
     check("Iva", "Ingrese el iva del producto ").not().isEmpty(),  
-    check("Consumible", "Ingrese el consumible").not().isEmpty(), 
+    check("Tipo", "Ingrese el Tipo").not().isEmpty(), 
     validarCampos
   ], httpProducto.putProductos); 
 

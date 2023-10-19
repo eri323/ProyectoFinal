@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const PedidoSchema = new mongoose.Schema({
     FechaCreacion: { type: Date, required: true },
     FechaEntrega: { type: Date, required: true },
-    IdDistribucionLoteFicha: { type: String, required: true },
+    DistribucionLoteFicha_id: { type: String, required: true },
     Subtotal: { type: Number, required: true },
     Total: { type: Number, required: true },
     createAT: { type: Date, default: Date.now },

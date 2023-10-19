@@ -4,7 +4,7 @@ const httpFicha = {
 
     getFichas: async (req, res) => {
         try {
-            const fichas = await Ficha.find();
+            const fichas = await Ficha.find().populate("Area_Id");
             res.json({ fichas });
         } catch (error) {
             res.status(400).json({ error });

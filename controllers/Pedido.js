@@ -3,7 +3,7 @@ import Pedidos from "../models/Pedido.js";
 const httpPedidos = {
     getPedidos: async (req, res) => {
         try {
-            const pedidos = await Pedidos.find();
+            const pedidos = await Pedidos.find().populate("DistribucionLoteFicha_id");
             res.json({ pedidos });
         } catch (error) {
             res.status(400).json({ error });

@@ -14,7 +14,7 @@ routers.get('/detallepedidobuscaid/:id', [
 ], httpDetallePedido.getDetallePedidoId);
 
 routers.post('/detallepedidocrear',[
-  check("Cantidad", "Cual es la cantidad").not().isEmpty().isMongoId(), 
+  check("Cantidad", "Cual es la cantidad").not().isEmpty(), 
   check("Pedido_id", "Digite el pedidoId").not().isEmpty().isMongoId(),
   check("Producto_id", "Digite el productoId").not().isEmpty().isMongoId(),
   validarCampos

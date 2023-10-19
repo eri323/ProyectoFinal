@@ -4,7 +4,7 @@ const httpDetallePedido = {
 
     getDetallePedido: async (req, res) => {
         try {
-            const detallePedido = await DetallePedido.find()
+            const detallePedido = await DetallePedido.find().populate("Producto_id").populate("Pedido_id");
             res.json({ detallePedido })
         } catch (error) {
             res.status(400).json({ error })

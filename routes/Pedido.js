@@ -16,7 +16,7 @@ routers.get('/pedidoabuscaid/:id', [
 routers.post('/pedidocrear', [ 
     check("FechaCreacion", "Se necesita la fecha de creacion").not().isEmpty(), 
     check("FechaEntrega", "Se necesita la fecha de entrega").not().isEmpty(), 
-    check("IdDistribucionLoteFicha", "Se necesita la IdDistribucionLoteFicha").not().isEmpty(), 
+    check("DistribucionLoteFicha_id", "Se necesita la DistribucionLoteFicha_id").not().isEmpty(), 
     check("Subtotal", "Se necesita el subtotal").not().isEmpty(), 
     check("Total", "Se necesita el total").not().isEmpty(), 
     validarCampos

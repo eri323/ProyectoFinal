@@ -4,7 +4,7 @@ const httpDistribucionLoteFicha = {
     
     getDistribucionLoteFicha: async (req, res) => {
         try {
-            const distribucionloteficha = await DistribucionLoteFicha.find();
+            const distribucionloteficha = await DistribucionLoteFicha.find().populate("Ficha_id");
             res.json({ distribucionloteficha });
         } catch (error) {
             res.status(400).json({ error });
@@ -16,7 +16,7 @@ const httpDistribucionLoteFicha = {
     getDistribucionLoteFichaId: async (req, res) => {
         const { id } = req.params;
         try {
-            const distribucionloteficha = await DistribucionLoteFicha.findById(id);
+            const distribucionloteficha = await DistribucionLoteFicha.findById(id).populate("Ficha_id");
             res.json({ distribucionloteficha });
         } catch (error) {
             res.status(400).json({ error });
