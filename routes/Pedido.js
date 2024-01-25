@@ -22,7 +22,7 @@ routers.post('/pedidocrear', [
     validarCampos
   ], httpPedido.postPedidos); 
 
-routers.put('/pedidosmodificar/:id', [ 
+routers.put('/pedidomodificar/:id', [ 
     check("id", "Digite el id").not().isEmpty(),
     check("id", "Digite el id").isMongoId(),
     check("FechaCreacion", "Se necesita la fecha de creacion").not().isEmpty(), 
@@ -33,13 +33,13 @@ routers.put('/pedidosmodificar/:id', [
     validarCampos
 ], httpPedido.putPedidos); 
 
-routers.put('/pedidosinac/:id', [ 
+routers.put('/pedidoinac/:id', [ 
     check("id", "Digite el id").not().isEmpty(),
     check("id", "Digite el id").isMongoId(),
     validarCampos
 ], httpPedido.putPedidosInactivar); 
 
-routers.put('/pedidosact/:id', [
+routers.put('/pedidoact/:id', [
     check("id", "Digite el id").not().isEmpty(),
     check("id", "Digite el id").isMongoId(),
     validarCampos
