@@ -11,8 +11,10 @@ import Lote from "./routes/Lote.js";
 import Pedido from "./routes/Pedido.js";
 import Producto from "./routes/Producto.js";
 import Usuarios from "./routes/Usuarios.js";
+import cors from "cors"
 
 const index = express()
+index.use(cors());
 index.use(express.json())
 
 index.use("/api/area", Area)
