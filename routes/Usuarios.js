@@ -1,7 +1,8 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import httpUsuario from "../controllers/Usuarios.js"; 
-import validarCampos from "../middelwares/validarcampos.js"
+import validarCampos from "../middelwares/validarcampos.js";
+import hpusuarios from "../helpers/Usuarios.js";
 
 const routers = Router();
 
@@ -25,6 +26,8 @@ routers.post('/usuariocrear', [
     check("Correo", "Ingrese su correo").not().isEmpty(),
     check("Contraseña", "Ingrese su contraseña ").not().isEmpty(),  
     check("Rol", "ingrese su rol").not().isEmpty(), 
+    check("Rol").custom(hpusuarios.validarRol),
+    check("Contraseña").custom(hpusuarios.validarPassword),
     validarCampos
 ], httpUsuario.postUsuarios); 
 

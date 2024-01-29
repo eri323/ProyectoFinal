@@ -72,10 +72,10 @@ const httpUsuarios = {
 
 
     login: async (req, res) => {
-        const { Nombre, Contraseña } = req.body;
+        const { Identificacion, Contraseña } = req.body;
 
         try {
-            const usuarios = await Usuarios.findOne({ Nombre })
+            const usuarios = await Usuarios.findOne({ Identificacion })
             if (!usuarios) {
                 return res.status(400).json({
                     msg: "usuario / Contraseña no son correctos"
