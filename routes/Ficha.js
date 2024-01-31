@@ -19,7 +19,7 @@ routers.post('/fichacrear', [
     check("NivelFormacion", "Ingrese NivelFormacion").not().isEmpty(), 
     check("FechaInicio", "Ingrese Fecha Inicio").not().isEmpty(),
     check("FechaFin", "Ingrese Fecha Fin ").not().isEmpty(),  
-    check("Area_Id", "Ingrese Area_Id").not().isEmpty(), 
+    check("Area_Id", "Ingrese Area_Id").not().isEmpty().isMongoId(),
     validarCampos
 ], httpFicha.postFicha); 
 
