@@ -46,6 +46,7 @@ const httpLote = {
   },
 
   putLoteInactivar: async (req, res) => {
+    console.log(req.params.id);
     try {
       const { id } = req.params;
       const lote = await Lote.findByIdAndUpdate(
@@ -60,6 +61,7 @@ const httpLote = {
   },
 
   putLoteActivar: async (req, res) => {
+    console.log(req.params.id);
     try {
       const { id } = req.params;
       const lote = await Lote.findByIdAndUpdate(
