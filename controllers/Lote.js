@@ -46,7 +46,7 @@ const httpLote = {
     putLoteInactivar: async (req, res) => {
         try {
             const { id } = req.params;
-            const lote = await Lote.findByIdAndUpdate(id, { estado: 0 }, { new: true });
+            const lote = await Lote.findByIdAndUpdate(id, { Estado: 0 }, { new: true });
             res.json({ lote });
         } catch (error) {
             res.status(400).json({ error });
@@ -57,7 +57,7 @@ const httpLote = {
     putLoteActivar: async (req, res) => {
         try {
             const { id } = req.params;
-            const lote = await Lote.findByIdAndUpdate(id, { estado: 1 }, { new: true });
+            const lote = await Lote.findByIdAndUpdate(id, { Estado: 1 }, { new: true });
             res.json({ lote });
         } catch (error) {
             res.status(400).json({ error });
